@@ -51,13 +51,22 @@ async signIn() {
         // call service utk collection users
         this.userSvc.getUser(this.uid).subscribe(res => {
           this.user = res;
-          console.log('dbUser: user:', JSON.stringify(this.user));    
+          console.log('dbUser: user:', JSON.stringify(this.user));
+
+          if (this.user.userType === 'penjaga') {
+            loading.dismiss();
+        
+            this.close();
+            this.router.navigateByUrl('/penjaga');
+          }
+          else {
+            loading.dismiss();
+            this.close();
+            this.router.navigateByUrl('/tabsguru');
+          }
         });
         
-        loading.dismiss();
         
-        this.close();
-        this.router.navigateByUrl('/penjaga');
 },
 
 async (err) => {
