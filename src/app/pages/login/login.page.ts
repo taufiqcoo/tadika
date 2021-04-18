@@ -1,10 +1,12 @@
+import { User } from './../../services/user.interface';
 import { Component, OnInit } from '@angular/core';
 import { ResetPwPage } from '../reset-pw/reset-pw.page';
 import {ModalController, AlertController, LoadingController,} from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
- import { Router } from '@angular/router';
-  
+import { Router } from '@angular/router';
+import { UserService } from '../../services/users.service';
+import * as IUsers from '../../services/user.interface';
 
 
 @Component({
@@ -17,7 +19,8 @@ export class LoginPage implements OnInit {
   loginForm: FormGroup;
   showPw = false;
 
-
+  user: IUsers.User;
+  uid = null;
 
   constructor(
     private modalCtrl: ModalController,
@@ -25,7 +28,8 @@ export class LoginPage implements OnInit {
     private auth: AuthService,
     private alertController: AlertController,
     private loadingController: LoadingController,
-    private router: Router
+    private router: Router,
+    private userSvc: UserService,
   ) { }
 
   ngOnInit() {
@@ -42,7 +46,16 @@ async signIn() {
         .signIn(this.loginForm.value)
         .then(
         (res) => {
+        console.log('signIn: user.uid:', JSON.stringify(res.user.uid));
+        this.uid = res.user.uid;
+        // call service utk collection users
+        this.userSvc.getUser(this.uid).subscribe(res => {
+          this.user = res;
+          console.log('dbUser: user:', JSON.stringify(this.user));    
+        });
+        
         loading.dismiss();
+        
         this.close();
         this.router.navigateByUrl('/penjaga');
 },

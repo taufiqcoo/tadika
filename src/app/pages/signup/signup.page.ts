@@ -39,7 +39,7 @@ export class SignupPage implements OnInit {
   async signUp() {
       const loading = await this.loadingController.create();
       await loading.present();
-      this.auth.emailSignup(this.registerForm.value)
+      this.auth.emailSignup(this.registerForm.value, "penjaga")
       .then(
         (res) => {
       loading.dismiss();
