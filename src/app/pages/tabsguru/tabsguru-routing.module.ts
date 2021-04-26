@@ -13,6 +13,10 @@ const routes: Routes = [
       import('../senaraimuridguru/senaraimuridguru.module').then(m => m.SenaraimuridguruPageModule),
     },
     {
+      path: 'chatguru',
+      loadChildren: () => import('../chatguru/chatguru.module').then( m => m.ChatguruPageModule)
+    },
+    {
       path: 'akaunguru',
       loadChildren: () =>
       import('../akaunguru/akaunguru.module').then(m => m.AkaunguruPageModule),

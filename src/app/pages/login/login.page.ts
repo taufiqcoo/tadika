@@ -55,9 +55,9 @@ async signIn() {
 
           if (this.user.userType === 'penjaga') {
             loading.dismiss();
-        
+
             this.close();
-            this.router.navigateByUrl('/penjaga');
+            this.router.navigateByUrl('/tabs');
           }
           else {
             loading.dismiss();

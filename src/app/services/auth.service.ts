@@ -4,18 +4,55 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import * as IUsers from './user.interface';
 
 import firebase from 'firebase';
-
+import { AlertController } from '@ionic/angular';
 import {
   AngularFireStorage
 } from '@angular/fire/storage';
+import {  AngularFireUploadTask } from
+ '@angular/fire/storage';
+import { switchMap } from 'rxjs/operators';
+import { of, from } from 'rxjs';
   
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  firebase: any;
 
-  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) { }
+  constructor(private afAuth: AngularFireAuth,
+     private afs: AngularFirestore,
+     private alertController: AlertController,
+     private storage: AngularFireStorage
+     ) { }
+
+     uploadAvatar(base64String) {
+      const filePath = `${this.getUserId()}/avatar`;
+      const fileRef = this.storage.ref(filePath);
+      const task: AngularFireUploadTask = fileRef.putString(
+      base64String,
+      'base64',
+      { contentType: 'image/png' }
+      );
+      return from(task).pipe(
+      switchMap(result => {
+      // Upload Task finished, get URL to the image
+      return fileRef.getDownloadURL();
+      }),
+      switchMap(photoURL => {
+      // Set the URL to the user document
+      const uploadPromise = this.afs
+      .doc(`users/${this.getUserId()}`)
+      .set({ photoURL }, { merge: true });
+      return from(uploadPromise);
+      })
+      )
+      }
+      
+
+
+
+
 
   // Start the Firebase register process
 async emailSignup({email, password, fullname}, userType: string): Promise<any> {
@@ -58,6 +95,12 @@ resetPw(email) {
 //    return this.afs.doc<IUsers.User>(`users/${this.getUserId()}`).valueChanges();
 //}
 
+getUserId() {
+  return  firebase.auth().currentUser.uid;
+  }
+  getUserData() {
+  return this.afs.doc<IUsers.User>(`users/${this.getUserId()}`).valueChanges();
+  }
 }
 
 

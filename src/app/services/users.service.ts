@@ -18,6 +18,7 @@ export class UserService {
 
   private usersCollection: AngularFirestoreCollection<IUsers.User>;
   private users: Observable<IUsers.User[]>;
+  firebase: any;
 
   constructor(private afs: AngularFirestore,  private authService: AuthService ) { 
     this.usersCollection = afs.collection<IUsers.User>('users');
@@ -52,4 +53,6 @@ export class UserService {
   removeUser(id) {
     return this.usersCollection.doc(id).delete();
   }
+
+    
 }

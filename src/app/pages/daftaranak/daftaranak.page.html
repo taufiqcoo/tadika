@@ -1,36 +1,31 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color=primary>
     <ion-title>Kids Registration </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
-  <form>
-    <ion-card>
-    <ion-item lines="full">
-      <ion-label position="floating">Child Name</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-
-    
-    <ion-item>
-      <ion-label>Years</ion-label>
-      <ion-select placeholder="choose years">
-        <ion-select-option value="q">4</ion-select-option>
-        <ion-select-option value="w">5</ion-select-option>
-        <ion-select-option value="e">6</ion-select-option>
-      </ion-select>
-    </ion-item>
-
-    
-  </ion-card>
-    <ion-row>
-      <ion-col  class="ion-text-center">
-        <ion-button type="submit" color="success" shape="round" (click)="openToast()">Register</ion-button>
-      </ion-col>
-    </ion-row>
+<ion-content class="ion-text-center">
   
-  </form>
+  <ion-list >
+    <ion-item position="floating">
+      <ion-input required type="text" placeholder="insert name" [(ngModel)]="todo.name"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-select placeholder="choose age" [(ngModel)]="todo.age">
+      <ion-select-option value="4th grade">4th grade</ion-select-option>
+      <ion-select-option value="5th grade">5th grade</ion-select-option>
+      <ion-select-option value="6th grade">6th grade</ion-select-option>
+    </ion-select>
+    </ion-item>
+  </ion-list>
+
+ 
+  <ion-button  type="submit" color="success" shape="round" (click)="openToast()" (click)="saveTodo()">Save</ion-button>
+
 </ion-content>
+
+  
+  

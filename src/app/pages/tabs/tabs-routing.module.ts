@@ -18,9 +18,18 @@ const routes: Routes = [
       import('../senaraianak/senaraianak.module').then(m => m.SenaraianakPageModule),
     },
     {
+      path: 'senaraianak/:id',
+      loadChildren: () =>
+      import('../senaraianak/senaraianak.module').then(m => m.SenaraianakPageModule),
+    },
+    {
       path: 'akaunpenjaga',
       loadChildren: () =>
       import('../akaunpejaga/akaunpejaga.module').then(m => m.AkaunpejagaPageModule),
+    },
+    {
+      path: 'chatpenjaga',
+      loadChildren: () => import('../chatpenjaga/chatpenjaga.module').then( m => m.ChatpenjagaPageModule)
     },
     {
       path: '',
