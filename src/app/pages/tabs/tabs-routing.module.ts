@@ -32,6 +32,10 @@ const routes: Routes = [
       loadChildren: () => import('../chatpenjaga/chatpenjaga.module').then( m => m.ChatpenjagaPageModule)
     },
     {
+      path: 'examination',
+      loadChildren: () => import('../examination/examination.module').then( m => m.ExaminationPageModule)
+    },
+    {
       path: '',
       redirectTo: 'senaraianak',
       pathMatch: 'full',

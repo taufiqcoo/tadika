@@ -8,6 +8,7 @@ import { Plugins, CameraResultType } from '@capacitor/core';
 import { LoadingController } from '@ionic/angular';
 const { Camera } = Plugins;
 
+
 @Component({
   selector: 'app-akaunpejaga',
   templateUrl: './akaunpejaga.page.html',
