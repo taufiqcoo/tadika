@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/users.service';
 import * as IUsers from '../../services/user.interface';
+import { SignupPage } from '../signup/signup.page';
 
 
 @Component({
@@ -16,6 +17,7 @@ import * as IUsers from '../../services/user.interface';
 })
 export class LoginPage implements OnInit {
   resetPwPage = ResetPwPage;
+  forgotPass = SignupPage;
   loginForm: FormGroup;
   showPw = false;
 

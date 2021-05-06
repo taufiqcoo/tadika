@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="ion-no-border" >
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="close()" color="primary">
@@ -11,7 +11,12 @@
 
 
 
-  <ion-content class="ion-padding-top">
+  <ion-content >
+    <ion-card class="ion-no-margin">
+    
+      <ion-img src="assets/imgs/header1.png" class="ion-align-self-end"></ion-img>
+    
+    </ion-card>
     <form (ngSubmit)="signUp()" [formGroup]="registerForm">
     <ion-item [lines]="showDetails ? 'inset' : 'none'">
   <ion-input

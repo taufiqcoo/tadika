@@ -11,10 +11,14 @@
 
   
     <ion-item-sliding *ngFor="let item of todos">
+      
       <ion-item lines="inset" button [routerLink]="['/senaraianak', item.id]">
-        <ion-label>
+        <ion-label >
+          
           {{ item.name }}<br>
-          {{ item.age }}
+           {{ item.age }} 
+          <h4>{{ item.parents}}</h4>
+            <h4>{{ item.address}}</h4>
           <h4>{{ item.createdAt | date:'short' }}</h4>
          
         </ion-label>
@@ -28,7 +32,5 @@
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
- 
   </ion-list>
-
 </ion-content>

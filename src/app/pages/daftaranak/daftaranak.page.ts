@@ -4,6 +4,9 @@ import { Todo, TodoService } from './../../services/todo.service';
 import { ActivatedRoute } from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
 
+
+
+
 @Component({
   selector: 'app-daftaranak',
   templateUrl: './daftaranak.page.html',
@@ -15,8 +18,11 @@ export class DaftaranakPage implements OnInit {
     name: '',
     createdAt: new Date().getTime(),
     age: '',
-   
+    parents:'',
+    address:'',
+    
   };
+
   todoId = null;
 
   constructor(public toastController: ToastController,private route: ActivatedRoute, private nav: NavController, private todoService: TodoService, private loadingController: LoadingController) { }
@@ -67,4 +73,7 @@ async saveTodo() {
   }
 }
 
+  
+
 }
+

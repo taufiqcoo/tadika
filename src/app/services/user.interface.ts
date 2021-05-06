@@ -5,3 +5,7 @@ export interface User {
    displayName?: string;
    userType?: string;
 }
+
+
+
+

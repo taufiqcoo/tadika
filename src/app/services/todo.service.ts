@@ -1,18 +1,37 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { SenaraimuridguruPageRoutingModule } from '../pages/senaraimuridguru/senaraimuridguru-routing.module';
+import * as IUsers from './user.interface';
+import firebase from 'firebase';
+import { AlertController } from '@ionic/angular';
+import {
+  AngularFireStorage
+} from '@angular/fire/storage';
+import {  AngularFireUploadTask } from
+ '@angular/fire/storage';
+import { switchMap } from 'rxjs/operators';
+import { of, from } from 'rxjs';
 
 export interface Todo {
-  id?: string;
   name: string;
-  age: string;
-  createdAt: number;
+  age: '';
+  parents: string;
+  address: string;
+  createdAt: number; 
 }
+
+
+
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {private todosCollection: AngularFirestoreCollection<Todo>;
+   
 
   private todos: Observable<Todo[]>;
 
@@ -49,5 +68,11 @@ export class TodoService {private todosCollection: AngularFirestoreCollection<To
   removeTodo(id) {
     return this.todosCollection.doc(id).delete();
   }
+  
+
    }
+
+  function getTodo() {
+    throw new Error('Function not implemented.');
+  }
 

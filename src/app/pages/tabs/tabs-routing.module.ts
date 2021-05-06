@@ -12,16 +12,7 @@ const routes: Routes = [
       loadChildren: () =>
       import('../daftaranak/daftaranak.module').then(m => m.DaftaranakPageModule),
     },
-    {
-      path: 'senaraianak',
-      loadChildren: () =>
-      import('../senaraianak/senaraianak.module').then(m => m.SenaraianakPageModule),
-    },
-    {
-      path: 'senaraianak/:id',
-      loadChildren: () =>
-      import('../senaraianak/senaraianak.module').then(m => m.SenaraianakPageModule),
-    },
+   
     {
       path: 'akaunpenjaga',
       loadChildren: () =>
@@ -34,6 +25,10 @@ const routes: Routes = [
     {
       path: 'examination',
       loadChildren: () => import('../examination/examination.module').then( m => m.ExaminationPageModule)
+    },
+    {
+      path: 'senaraianak',
+      loadChildren: () => import('../senaraianak/senaraianak.module').then( m => m.SenaraianakPageModule)
     },
     {
       path: '',

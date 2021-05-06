@@ -1,16 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-    <ion-button (click)="close()" color="primary">
-      <ion-icon slot="icon-only" name="close"></ion-icon>
-    </ion-button>
-    </ion-buttons>
-      <ion-title>Log In</ion-title>
+<ion-header class="ion-no-border" >
+  <ion-toolbar >
+    <div class="ion-text-center">
+      <ion-title >Log In</ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content class="ion-padding-top">
+<ion-content >
+  <ion-card class="ion-no-margin">
+    
+    <ion-img src="assets/imgs/header1.png" class="ion-align-self-end"></ion-img>
+  
+  </ion-card>
+  
   <form (ngSubmit)="signIn()" [formGroup]="loginForm">
   <ion-item lines="inset">
     <ion-input
@@ -66,6 +69,20 @@
 
       </ion-nav-link>
     </ion-col>
+
+    <ion-col size="12">
+      <ion-nav-link router-direction="forward" [component]="forgotPass">
+  <ion-button
+      expand="block"
+      size="small"
+      type="button"
+      fill="clear"
+      color="primary"
+  >Don't have an account yet?  Sign Up</ion-button>
+  
+  
+        </ion-nav-link>
+      </ion-col>
 
 
     </ion-row>
