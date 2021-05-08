@@ -9,7 +9,10 @@ export class ExaminationPage implements OnInit {
 
   constructor() { }
 
+ 
+
   ngOnInit() {
   }
+
 
 }

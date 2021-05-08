@@ -12,7 +12,7 @@ import * as IUsers from './user.interface';
 
  
 export interface Message {
-  
+  createdAt:firebase.default.firestore.FieldValue;
   id: string;
   from: string;
   msg: string;
@@ -49,7 +49,7 @@ export class ChatService {
     return this.getUsers().pipe(
       switchMap(res => {
         users = res;
-        return this.afs.collection('messages', ref => ref.orderBy('createdAt')).valueChanges({ idField: 'id' }) as Observable<Message[]>;
+        return this.afs.collection('messages', ref => ref.orderBy('createdAt')).valueChanges({ idField: 'id' }) as unknown as Observable<Message[]>;
       }),
       map(messages => {
         // Get the real name for each user
@@ -63,7 +63,7 @@ export class ChatService {
   }
    
   private getUsers() {
-    return this.afs.collection('users').valueChanges({ idField: 'uid' }) as Observable<IUsers.User[]>;
+    return this.afs.collection('users').valueChanges({ idField: 'id' }) as unknown as Observable<IUsers.User[]>;
   }
    
   private getUserForMsg(msgFromId, users: IUsers.User[]): string {    
