@@ -30,6 +30,7 @@ const routes: Routes = [
       path: 'senaraianak',
       loadChildren: () => import('../senaraianak/senaraianak.module').then( m => m.SenaraianakPageModule)
     },
+    
     {
       path: '',
       redirectTo: 'senaraianak',

@@ -29,6 +29,13 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     loadChildren: () => import('./pages/tabsguru/tabsguru.module').then( m => m.TabsguruPageModule)
   },
+  {
+    path: 'home',
+   
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
+  
+ 
 
  
 ];
