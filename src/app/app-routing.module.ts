@@ -34,6 +34,23 @@ const routes: Routes = [
    
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: 'infoguru',
+    loadChildren: () => import('./pages/infoguru/infoguru.module').then( m => m.InfoguruPageModule)
+  },
+  {
+    path: 'infoguru',
+    loadChildren: () => import('./pages/infoguru/infoguru.module').then( m => m.InfoguruPageModule)
+  },
+  {
+    path: 'scheduleguru',
+    loadChildren: () => import('./pages/scheduleguru/scheduleguru.module').then( m => m.ScheduleguruPageModule)
+  },
+  {
+    path: 'schedulepenjaga',
+    loadChildren: () => import('./pages/schedulepenjaga/schedulepenjaga.module').then( m => m.SchedulepenjagaPageModule)
+  },
+  
   
  
 

@@ -22,6 +22,12 @@ const routes: Routes = [
       import('../akaunguru/akaunguru.module').then(m => m.AkaunguruPageModule),
     }, 
     {
+      path: 'infoguru',
+      loadChildren: () =>
+      import('../infoguru/infoguru.module').then(m => m.InfoguruPageModule),
+    }, 
+   
+    {
     path: '',
       redirectTo: 'senaraimuridguru',
       pathMatch: 'full',
