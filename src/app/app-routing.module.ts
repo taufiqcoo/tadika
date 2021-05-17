@@ -50,6 +50,14 @@ const routes: Routes = [
     path: 'schedulepenjaga',
     loadChildren: () => import('./pages/schedulepenjaga/schedulepenjaga.module').then( m => m.SchedulepenjagaPageModule)
   },
+  {
+    path: 'examinationtabpenjaga',
+    loadChildren: () => import('./pages/examinationtabpenjaga/examinationtabpenjaga.module').then( m => m.ExaminationtabpenjagaPageModule)
+  },
+  {
+    path: 'examinationtabguru',
+    loadChildren: () => import('./pages/examinationtabguru/examinationtabguru.module').then( m => m.ExaminationtabguruPageModule)
+  },
   
   
  

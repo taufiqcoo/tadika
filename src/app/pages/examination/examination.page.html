@@ -40,25 +40,19 @@
 <ion-footer >
   
   
-  
+  <ion-card-content class="ion-text-center">
   <ion-card>
     <ion-card-header>
-      <a target="_blank" title="Pra Examination Result (PER)" href="https://docs.google.com/spreadsheets/d/1IHMTuuUUV_Gl5WHbQlA2AxUeBikBhXJcOTpiMUjLgPk/edit?usp=sharing" > <img src="assets/imgs/exam.png" > </a>
+      <a target="_blank" title="Pra Examination Result (PER)" > <img src="assets/imgs/exam.png"  (click)="exam()"> </a>
         <p><center>Exam</center></p>
       </ion-card-header>
   </ion-card>
   
-  <ion-card>
-    <ion-card-header>
-
-        <img src="assets/imgs/galery.png" (click)="test()">
-        <p><center>Galery</center></p>
-      </ion-card-header>
-  </ion-card>
+ 
 
   <ion-card>
     <ion-card-header>
-        <img src="assets/imgs/schedule.png" >
+        <img src="assets/imgs/schedule.png" (click)="schedule()" >
         <p><center>Schedule</center></p>
       </ion-card-header>
   </ion-card>
@@ -69,7 +63,7 @@
         <p><center>Calendar</center></p>
       </ion-card-header>
   </ion-card>
-
+</ion-card-content>
   
   
       

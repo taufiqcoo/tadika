@@ -10,12 +10,15 @@ export class ExaminationPage implements OnInit {
 
   constructor(private router: Router) { }
 
- test(){
-   this.router.navigate (['galerypenjaga']);
+ schedule(){
+   this.router.navigate (['schedulepenjaga']);
  }
 
  cal(){
   this.router.navigate (['home']);
+}
+exam(){
+  this.router.navigate (['examinationtabpenjaga']);
 }
 
   ngOnInit() {
