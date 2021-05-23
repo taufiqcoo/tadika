@@ -26,6 +26,10 @@ const routes: Routes = [
       loadChildren: () =>
       import('../infoguru/infoguru.module').then(m => m.InfoguruPageModule),
     }, 
+    {
+      path: 'home1',
+      loadChildren: () => import('../home1/home1.module').then( m => m.Home1PageModule)
+    },
    
     {
     path: '',

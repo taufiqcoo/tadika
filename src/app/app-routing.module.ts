@@ -58,6 +58,15 @@ const routes: Routes = [
     path: 'examinationtabguru',
     loadChildren: () => import('./pages/examinationtabguru/examinationtabguru.module').then( m => m.ExaminationtabguruPageModule)
   },
+ 
+  {
+    path: 'updatetodo',
+    loadChildren: () => import('./pages/updatetodo/updatetodo.module').then( m => m.UpdatetodoPageModule)
+  },
+  {
+    path: 'addtodo',
+    loadChildren: () => import('./pages/addtodo/addtodo.module').then( m => m.AddtodoPageModule)
+  },
   
   
  

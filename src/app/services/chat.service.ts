@@ -40,6 +40,7 @@ export class ChatService {
     return this.afs.collection('messages').add({
       msg: msg,
       from: this.currentUser.uid,
+      createdAt: firebase.default.firestore.FieldValue.serverTimestamp()
      
     });
   }
