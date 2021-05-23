@@ -1,7 +1,0 @@
-{
-  "name": "trillo",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
