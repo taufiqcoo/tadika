@@ -29,6 +29,7 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     loadChildren: () => import('./pages/tabsguru/tabsguru.module').then( m => m.TabsguruPageModule)
   },
+  
   {
     path: 'home',
    
@@ -67,6 +68,7 @@ const routes: Routes = [
     path: 'addtodo',
     loadChildren: () => import('./pages/addtodo/addtodo.module').then( m => m.AddtodoPageModule)
   },
+  
   
   
  

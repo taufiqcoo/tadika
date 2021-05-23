@@ -1,8 +1,6 @@
 <ion-header >
-  <ion-toolbar color="danger"> 
-
+  <ion-toolbar color="primary">
       <ion-title> Fees </ion-title>
-    
   </ion-toolbar>
 </ion-header>
 
@@ -29,25 +27,8 @@
       <ion-label>Due {{item.value.itemDueDate | date:'fullDate'}}</ion-label>
     </ion-card-content>
 
-    <ion-row class="center" > 
-      
-    
-
-      <ion-item button (click)="update(item)">
-        <ion-icon name="create-outline"></ion-icon>
-        <p>Update</p>
-      </ion-item>
-
-      <ion-item button (click)="delete(item.key)">
-        <ion-icon name="trash-outline"></ion-icon>
-        <p>Delete</p>
-      </ion-item>
-    </ion-row>
+   
 
   </ion-card>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
-    <ion-fab-button (click)="addNewItem()" color="danger">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  
 </ion-content>

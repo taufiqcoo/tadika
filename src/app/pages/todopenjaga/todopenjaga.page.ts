@@ -4,24 +4,21 @@ import { Todo1Service } from './../../services/todo1.service';
 import { AddtodoPage } from '../addtodo/addtodo.page';
 import { UpdatetodoPage} from '../updatetodo/updatetodo.page';
 
-
-
 @Component({
-  selector: 'app-home1',
-  templateUrl: './home1.page.html',
-  styleUrls: ['./home1.page.scss'],
+  selector: 'app-todopenjaga',
+  templateUrl: './todopenjaga.page.html',
+  styleUrls: ['./todopenjaga.page.scss'],
 })
-export class Home1Page  {
+export class TodopenjagaPage  {
   todoList = []
   
   today: number = Date.now();
 
-
-  constructor(public modalCtlr: ModalController, public todo1Service:Todo1Service) {
+  constructor(public modalCtlr: ModalController, public todo1Service:Todo1Service) { 
     this.getAllTask()
-   }
-   
-   async addNewItem() {
+  }
+
+  async addNewItem() {
     const modal = await this.modalCtlr.create({
       component: AddtodoPage,
     })
@@ -53,4 +50,5 @@ export class Home1Page  {
     
     return await modal.present()
   }
+
 }

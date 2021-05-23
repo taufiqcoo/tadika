@@ -30,6 +30,10 @@ const routes: Routes = [
       path: 'senaraianak',
       loadChildren: () => import('../senaraianak/senaraianak.module').then( m => m.SenaraianakPageModule)
     },
+    {
+      path: 'todopenjaga',
+      loadChildren: () => import('../todopenjaga/todopenjaga.module').then( m => m.TodopenjagaPageModule)
+    },
     
     {
       path: '',
