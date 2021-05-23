@@ -18,8 +18,6 @@ export class DaftaranakPage implements OnInit {
     name: '',
     createdAt: new Date().getTime(),
     age: '',
-    parents:'',
-    address:'',
     
   };
 

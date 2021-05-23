@@ -18,8 +18,6 @@ import { of, from } from 'rxjs';
 export interface Todo {
   name: string;
   age: '';
-  parents: string;
-  address: string;
   createdAt: number; 
 }
 
