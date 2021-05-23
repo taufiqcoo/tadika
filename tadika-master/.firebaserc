@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ionicpdf-707d4": {
+      "hosting": {
+        "app": [
+          "ionicpdf-707d4"
+        ]
+      }
+    }
+  }
+}

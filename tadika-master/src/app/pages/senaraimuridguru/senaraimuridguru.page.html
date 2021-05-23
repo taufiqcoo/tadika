@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color=danger>
+    <ion-title>Student List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+ 
+
+  
+    <ion-item-sliding *ngFor="let item of todos">
+      
+      <ion-item lines="inset" button [routerLink]="['/senaraianak', item.id]">
+        <ion-label >
+          
+          {{ item.name }}<br>
+           {{ item.age }} 
+          <h4>{{ item.parents}}</h4>
+            <h4>{{ item.address}}</h4>
+          <h4>{{ item.createdAt | date:'short' }}</h4>
+         
+        </ion-label>
+        <ion-note slot="end" color="primary"></ion-note>
+      </ion-item>
+ 
+      <ion-item-options side="end">
+        <ion-item-option (click)="remove(item)" color="secondary">
+          Check
+          <ion-icon name="checkmark" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
