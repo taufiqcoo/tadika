@@ -26,10 +26,7 @@ const routes: Routes = [
       path: 'examination',
       loadChildren: () => import('../examination/examination.module').then( m => m.ExaminationPageModule)
     },
-    {
-      path: 'senaraianak',
-      loadChildren: () => import('../senaraianak/senaraianak.module').then( m => m.SenaraianakPageModule)
-    },
+  
     {
       path: 'todopenjaga',
       loadChildren: () => import('../todopenjaga/todopenjaga.module').then( m => m.TodopenjagaPageModule)
@@ -37,7 +34,7 @@ const routes: Routes = [
     
     {
       path: '',
-      redirectTo: 'senaraianak',
+      redirectTo: 'examination',
       pathMatch: 'full',
       },
       

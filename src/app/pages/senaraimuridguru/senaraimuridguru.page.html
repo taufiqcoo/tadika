@@ -26,9 +26,16 @@
       </ion-item>
  
       <ion-item-options side="end">
-        <ion-item-option (click)="remove(item)" color="secondary">
-          Check
-          <ion-icon name="checkmark" slot="end"></ion-icon>
+        <ion-item-option (click)="remove(item)" color="danger">
+      
+          <ion-icon name="trash" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item-options side="start">
+        <ion-item-option (click)="remove(item)" color="success">
+      
+          <ion-icon name="checkmark" slot="icon-only"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>

@@ -27,8 +27,8 @@ export class DaftaranakPage implements OnInit {
 
   async openToast() {
     const toats = await this.toastController.create({
-      message: 'Registered please go to the List tab',
-      duration: 2000
+      message: 'Registered Thank you',
+      duration: 3000
     });
     toats.present();
   } 
