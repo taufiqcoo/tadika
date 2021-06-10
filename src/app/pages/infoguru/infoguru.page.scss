@@ -4,7 +4,7 @@
 ion-card{
     display: inline-block;
     flex-direction: column;
-    width: 100px !important;
+    width: 125px !important;
     margin: -4px !important;
     color: #f1f1f1;
     box-shadow: none;
@@ -21,6 +21,8 @@ ion-card{
     color: #f1f1f1;
 }
 .bannergambar{
+
+    width: 100%;
     position: relative;
     
 }
