@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <p class="ion-text-center" style="font-weight: 400;color: #433465 ;">{{today | date:'fullDate'}}</p></center>
+  <p class="ion-text-center" style="font-weight: 400;color: #433465 ;">{{today | date:'fullDate'}}</p>
 
   <ion-card *ngFor="let item of todoList; let i = index" class="ion-margin">
     <ion-card-header>
