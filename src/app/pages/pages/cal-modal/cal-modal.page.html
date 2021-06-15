@@ -24,11 +24,11 @@
  
   <calendar
   *ngIf="modalReady"
-    [calendarMode]="calendar.mode"
+    
     [currentDate]="calendar.currentDate"
     (onTitleChanged)="onViewTitleChanged($event)"
     (onTimeSelected)="onTimeSelected($event)"
-    lockSwipes="true"
+    
   >
   </calendar>
 </ion-content>
