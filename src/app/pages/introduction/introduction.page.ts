@@ -68,11 +68,11 @@ async openLogin() {
 
 async openTerms(e) {
   e.preventDefault();
-  await Browser.open({ url: 'https://devdactic.com/imprint/' });
+  await Browser.open({ url: 'https://docs.google.com/document/d/1F1iCILt9QgRDwlfDZlMJg0CCFFXKhuU0pYCeeEn9OOI/edit#heading=h.vs09h7tnqpgt' });
   }
   async openPrivacy(e) {
     e.preventDefault();
-await Browser.open({ url: 'https://devdactic.com/privacy-policy/' });
+await Browser.open({ url: 'https://docs.google.com/document/d/1_ibQ3qKgwNNbGwMJdNB3buBRA9zqWV9uynI7HYZFMYQ/edit#heading=h.yszqt4qrdepv/' });
   }
 }
   
